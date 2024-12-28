@@ -2,6 +2,7 @@ import DefaultLayout from "@/Layouts/DefaultLayout";
 import { PageProps } from "@/types";
 import { Head, Link } from "@inertiajs/react";
 import { LineChartC } from "@/Components/HomeComponents/LineChartC";
+import { BarChartC } from "@/Components/HomeComponents/BarChartC";
 
 export default function Welcome({
   auth,
@@ -19,7 +20,7 @@ export default function Welcome({
     <>
       <DefaultLayout>
         <Head title='Welcome' />
-        <LineChartC
+        <BarChartC
           title='Line Chart - Multiple'
           timeframe='January - June 2024'
           chartData={[
@@ -37,7 +38,7 @@ export default function Welcome({
             { month: "December", income: 16000, expense: 8500, saved: 7500 },
           ]}
           chartConfig={{
-            income: { label: "Income", color: "green" },
+            income: { label: "Income", color: "#000" },
             expense: { label: "Expense", color: "red" },
             saved: { label: "Saved", color: "blue" },
           }}
