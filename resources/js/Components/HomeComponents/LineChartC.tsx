@@ -20,10 +20,6 @@ interface ChartDataInterface {
   [key: string]: number | string;
 }
 
-interface ChartConfigInterface {
-  [key: string]: { label: string; color: string };
-}
-
 interface LineChartCProps {
   title: string;
   timeframe: string;
