@@ -1,4 +1,4 @@
-import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
+import { CartesianGrid, Line, LineChart, XAxis, LabelList } from "recharts";
 
 import {
   Card,
@@ -70,9 +70,21 @@ export const LineChartC = ({
                 type='monotone'
                 stroke={`var(--color-${item})`}
                 strokeWidth={2}
-                dot={false}
+                dot={{
+                  fill: `var(--color-${item})`,
+                }}
+                activeDot={{
+                  r: 6,
+                }}
                 key={index}
-              />
+              >
+                <LabelList
+                  position='top'
+                  offset={12}
+                  className='fill-foreground'
+                  fontSize={12}
+                />
+              </Line>
             ))}
           </LineChart>
         </ChartContainer>

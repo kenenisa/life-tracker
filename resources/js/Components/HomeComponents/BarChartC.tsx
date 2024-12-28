@@ -1,4 +1,4 @@
-import { CartesianGrid, Bar, BarChart, XAxis } from "recharts";
+import { CartesianGrid, Bar, BarChart, XAxis, LabelList } from "recharts";
 
 import {
   Card,
@@ -24,12 +24,13 @@ interface ChartConfigInterface {
   [key: string]: { label: string; color: string };
 }
 
-interface LineChartCProps {
+interface BarChartCProps {
   title: string;
   timeframe: string;
   chartData: ChartDataInterface[];
   chartConfig: ChartConfig;
   datakeys: string[];
+  stacked?: boolean;
 }
 
 export const BarChartC = ({
@@ -38,7 +39,8 @@ export const BarChartC = ({
   chartData,
   chartConfig,
   datakeys,
-}: LineChartCProps) => {
+  stacked = true,
+}: BarChartCProps) => {
   return (
     <Card>
       <CardHeader>
@@ -71,7 +73,15 @@ export const BarChartC = ({
                 fill={`var(--color-${item})`}
                 radius={4}
                 key={index}
-              />
+                {...(stacked ? { stackId: "a" } : {})}
+              >
+                <LabelList
+                  position='top'
+                  offset={12}
+                  className='fill-foreground'
+                  fontSize={12}
+                />
+              </Bar>
             ))}
           </BarChart>
         </ChartContainer>

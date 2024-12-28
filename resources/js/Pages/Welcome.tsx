@@ -20,11 +20,11 @@ export default function Welcome({
     <>
       <DefaultLayout>
         <Head title='Welcome' />
-        <BarChartC
+        <LineChartC
           title='Line Chart - Multiple'
           timeframe='January - June 2024'
           chartData={[
-            { month: "January", income: 5000, expense: 3000, saved: 2000 },
+            { month: "January", income: -5000, expense: 3000, saved: 2000 },
             { month: "February", income: 6000, expense: 3500, saved: 2500 },
             { month: "March", income: 7000, expense: 4000, saved: 3000 },
             { month: "April", income: 8000, expense: 4500, saved: 3500 },
