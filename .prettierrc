@@ -1,0 +1,17 @@
+{
+    "semi": false, 
+    "singleQuote": true, 
+    "trailingComma": "es5",
+    "printWidth": 80, 
+    "tabWidth": 2, 
+    "jsxSingleQuote": true, 
+    "overrides": [
+      {
+        "files": ["*.tsx", "*.ts"], 
+        "options": {
+          "semi": true, 
+          "singleQuote": false 
+        }
+      }
+    ]
+  }
