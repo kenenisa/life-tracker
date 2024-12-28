@@ -4,6 +4,7 @@ import { Head, Link } from "@inertiajs/react";
 import { LineChartC } from "@/Components/HomeComponents/LineChartC";
 import { BarChartC } from "@/Components/HomeComponents/BarChartC";
 import { PieChartC } from "@/Components/HomeComponents/PieChartC";
+import { RadialChartC } from "@/Components/HomeComponents/RadialChartC";
 
 export default function Welcome({
   auth,
@@ -21,7 +22,7 @@ export default function Welcome({
     <>
       <DefaultLayout>
         <Head title='Welcome' />
-        <PieChartC
+        <RadialChartC
           title='Line Chart - Multiple'
           timeframe='January - June 2024'
           chartData={[

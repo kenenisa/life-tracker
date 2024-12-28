@@ -1,7 +1,4 @@
-"use client";
-
 import * as React from "react";
-import { TrendingUp } from "lucide-react";
 import { Label, Pie, PieChart } from "recharts";
 
 import {
@@ -24,30 +21,7 @@ interface ChartDataInterface {
   fill: string;
 }
 
-const chartData: ChartDataInterface[] = [
-  { title: "chrome", amount: 275, fill: "var(--color-chrome)" },
-  { title: "safari", amount: 200, fill: "var(--color-safari)" },
-  { title: "firefox", amount: 287, fill: "var(--color-firefox)" },
-];
-
-const chartConfig: ChartConfig = {
-  amount: {
-    label: "Amount",
-  },
-  chrome: {
-    label: "Chrome",
-    color: "hsl(var(--chart-1))",
-  },
-  safari: {
-    label: "Safari",
-    color: "hsl(var(--chart-2))",
-  },
-  firefox: {
-    label: "Firefox",
-    color: "hsl(var(--chart-3))",
-  },
-};
-interface PiehartCProps {
+interface PiechartCProps {
   title: string;
   timeframe: string;
   chartData: ChartDataInterface[];
@@ -59,7 +33,7 @@ export const PieChartC = ({
   timeframe,
   chartData,
   chartConfig,
-}: PiehartCProps) => {
+}: PiechartCProps) => {
   const totalAmount = React.useMemo(() => {
     return chartData.reduce((acc, curr) => acc + curr.amount, 0);
   }, []);
