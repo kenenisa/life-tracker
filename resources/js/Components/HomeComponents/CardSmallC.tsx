@@ -31,7 +31,7 @@ export const CardSmallC = ({
       <CardContent>
         <div className='flex flex-col py-2 justify-center gap-2'>
           <p className='text-gray-200'>{title}</p>
-          <h1 className='text-2xl'>{value}</h1>
+          <h1 className='text-3xl'>{value}</h1>
         </div>
       </CardContent>
     </Card>
