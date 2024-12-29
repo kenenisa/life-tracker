@@ -34,7 +34,7 @@ export const WeekDaysTabC = ({ workoutData }: WeekDaysTabCProps) => {
       {daysOfWeek.map((day) => (
         <TabsContent key={day} value={day}>
           <Card>
-            <CardContent className='p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-4 gap-12'>
+            <CardContent className='p-4 grid grid-cols-1  m-4 gap-12'>
               {/* Filter workouts for the current day */}
               {workoutData
                 .filter((workout) => workout.day === day)
