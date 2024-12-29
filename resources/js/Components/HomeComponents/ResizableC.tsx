@@ -2,9 +2,9 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@/Components/ui/resizable";
-import { BarChartC } from "@/Components/HomeComponents/BarChartC";
-import { LineChartC } from "@/Components/HomeComponents/LineChartC";
+} from "@/components/ui/resizable";
+import { BarChartC } from "@/components/HomeComponents/BarChartC";
+import { LineChartC } from "@/components/HomeComponents/LineChartC";
 
 export function ResizableC() {
   return (
