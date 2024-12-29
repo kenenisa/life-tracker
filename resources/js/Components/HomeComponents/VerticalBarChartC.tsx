@@ -33,8 +33,8 @@ export const VerticalBarChartC = ({
   chartConfig,
 }: VerticalBarChartCProps) => {
   return (
-    <Card className='flex items-center justify-center'>
-      <CardContent className=''>
+    <Card>
+      <CardContent>
         <ChartContainer config={chartConfig}>
           <BarChart
             accessibilityLayer
