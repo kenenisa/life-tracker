@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
@@ -55,8 +53,6 @@ export const AreaChartC = ({
       daysToSubtract = 30;
     } else if (timeRange === "7d") {
       daysToSubtract = 7;
-    } else if (timeRange === "1d") {
-      daysToSubtract = 1;
     }
     const startDate = new Date(referenceDate);
     startDate.setDate(startDate.getDate() - daysToSubtract);
@@ -88,9 +84,6 @@ export const AreaChartC = ({
             </SelectItem>
             <SelectItem value='7d' className='rounded-lg'>
               Last 7 days
-            </SelectItem>
-            <SelectItem value='1d' className='rounded-lg'>
-              Last 1 day
             </SelectItem>
           </SelectContent>
         </Select>
