@@ -49,7 +49,7 @@ export const BarChartC = ({
 
   const filteredData = chartData.filter((item) => {
     const date = new Date(item.date);
-    const referenceDate = new Date("2024-06-30");
+    const referenceDate = new Date().toISOString().slice(0, 10);
     let daysToSubtract = 90;
     if (timeRange === "30d") {
       daysToSubtract = 30;

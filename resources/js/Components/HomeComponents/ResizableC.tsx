@@ -5,7 +5,6 @@ import {
 } from "@/Components/ui/resizable";
 import { BarChartC } from "@/Components/HomeComponents/BarChartC";
 import { LineChartC } from "@/Components/HomeComponents/LineChartC";
-import { RadialChartC } from "./RadialChartC";
 
 export function ResizableC() {
   return (

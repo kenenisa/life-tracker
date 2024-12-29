@@ -8,6 +8,7 @@ import { RadialChartC } from "@/Components/HomeComponents/RadialChartC";
 import { AreaChartC } from "@/Components/HomeComponents/AreaChartC";
 import { CardSmallC } from "@/Components/HomeComponents/CardSmallC";
 import { ResizableC } from "@/Components/HomeComponents/ResizableC";
+import { HeatMapC } from "@/Components/HomeComponents/HeatMapC";
 
 export default function Welcome({
   auth,
@@ -25,6 +26,18 @@ export default function Welcome({
     <>
       <DefaultLayout>
         <Head title='Welcome' />
+        <HeatMapC
+          value={[
+            { date: "2024/01/11", count: 2 },
+            { date: "2024/01/12", count: 20 },
+            { date: "2024/01/13", count: 10 },
+            { date: "2024/04/11", count: 2 },
+            { date: "2024/05/01", count: 5 },
+            { date: "2024/05/02", count: 5 },
+            { date: "2024/05/04", count: 11 },
+            { date: "2023/05/05", count: 5 },
+          ]}
+        />
         <div className='grid grid-cols-1 gap-4 md:grid-cols-3 p-2'>
           <CardSmallC
             title='Total Income'
@@ -51,36 +64,36 @@ export default function Welcome({
             title='Area Chart'
             description='January - June 2024'
             chartData={[
-              { date: "2024-04-01", desktop: 222, mobile: 150, tablet: 180 },
-              { date: "2024-04-02", desktop: 97, mobile: 180, tablet: 120 },
-              { date: "2024-04-03", desktop: 167, mobile: 120, tablet: 150 },
-              { date: "2024-04-04", desktop: 242, mobile: 260, tablet: 200 },
-              { date: "2024-04-05", desktop: 373, mobile: 290, tablet: 250 },
-              { date: "2024-04-06", desktop: 301, mobile: 340, tablet: 300 },
-              { date: "2024-04-07", desktop: 245, mobile: 180, tablet: 170 },
-              { date: "2024-04-08", desktop: 409, mobile: 320, tablet: 280 },
-              { date: "2024-04-09", desktop: 59, mobile: 110, tablet: 90 },
-              { date: "2024-04-10", desktop: 261, mobile: 190, tablet: 220 },
-              { date: "2024-04-11", desktop: 327, mobile: 350, tablet: 300 },
-              { date: "2024-04-12", desktop: 292, mobile: 210, tablet: 180 },
-              { date: "2024-04-13", desktop: 342, mobile: 380, tablet: 320 },
-              { date: "2024-04-14", desktop: 137, mobile: 220, tablet: 150 },
-              { date: "2024-04-15", desktop: 120, mobile: 170, tablet: 110 },
-              { date: "2024-04-16", desktop: 138, mobile: 190, tablet: 130 },
-              { date: "2024-04-17", desktop: 446, mobile: 360, tablet: 380 },
-              { date: "2024-04-18", desktop: 364, mobile: 410, tablet: 350 },
-              { date: "2024-04-19", desktop: 243, mobile: 180, tablet: 200 },
-              { date: "2024-04-20", desktop: 89, mobile: 150, tablet: 110 },
-              { date: "2024-04-21", desktop: 137, mobile: 200, tablet: 140 },
-              { date: "2024-04-22", desktop: 224, mobile: 170, tablet: 180 },
-              { date: "2024-04-23", desktop: 138, mobile: 230, tablet: 160 },
-              { date: "2024-04-24", desktop: 387, mobile: 290, tablet: 300 },
-              { date: "2024-04-25", desktop: 215, mobile: 250, tablet: 220 },
-              { date: "2024-04-26", desktop: 75, mobile: 130, tablet: 100 },
-              { date: "2024-04-27", desktop: 383, mobile: 420, tablet: 360 },
-              { date: "2024-04-28", desktop: 122, mobile: 180, tablet: 150 },
-              { date: "2024-04-29", desktop: 315, mobile: 240, tablet: 260 },
-              { date: "2024-04-30", desktop: 454, mobile: 380, tablet: 400 },
+              { date: "2024-12-01", desktop: 222, mobile: 150, tablet: 180 },
+              { date: "2024-12-02", desktop: 97, mobile: 180, tablet: 120 },
+              { date: "2024-12-12", desktop: 167, mobile: 120, tablet: 150 },
+              { date: "2024-12-12", desktop: 242, mobile: 260, tablet: 200 },
+              { date: "2024-12-05", desktop: 373, mobile: 290, tablet: 250 },
+              { date: "2024-12-06", desktop: 301, mobile: 340, tablet: 300 },
+              { date: "2024-12-07", desktop: 245, mobile: 180, tablet: 170 },
+              { date: "2024-12-08", desktop: 409, mobile: 320, tablet: 280 },
+              { date: "2024-12-09", desktop: 59, mobile: 110, tablet: 90 },
+              { date: "2024-12-10", desktop: 261, mobile: 190, tablet: 220 },
+              { date: "2024-12-11", desktop: 327, mobile: 350, tablet: 300 },
+              { date: "2024-12-12", desktop: 292, mobile: 210, tablet: 180 },
+              { date: "2024-12-13", desktop: 342, mobile: 380, tablet: 320 },
+              { date: "2024-12-14", desktop: 137, mobile: 220, tablet: 150 },
+              { date: "2024-12-15", desktop: 120, mobile: 170, tablet: 110 },
+              { date: "2024-12-16", desktop: 138, mobile: 190, tablet: 130 },
+              { date: "2024-12-17", desktop: 446, mobile: 360, tablet: 380 },
+              { date: "2024-12-18", desktop: 364, mobile: 410, tablet: 350 },
+              { date: "2024-12-19", desktop: 243, mobile: 180, tablet: 200 },
+              { date: "2024-12-20", desktop: 89, mobile: 150, tablet: 110 },
+              { date: "2024-12-21", desktop: 137, mobile: 200, tablet: 140 },
+              { date: "2024-12-22", desktop: 224, mobile: 170, tablet: 180 },
+              { date: "2024-12-23", desktop: 138, mobile: 230, tablet: 160 },
+              { date: "2024-12-24", desktop: 387, mobile: 290, tablet: 300 },
+              { date: "2024-12-25", desktop: 215, mobile: 250, tablet: 220 },
+              { date: "2024-12-26", desktop: 75, mobile: 130, tablet: 100 },
+              { date: "2024-12-27", desktop: 383, mobile: 420, tablet: 360 },
+              { date: "2024-12-28", desktop: 122, mobile: 180, tablet: 150 },
+              { date: "2024-12-29", desktop: 315, mobile: 240, tablet: 260 },
+              { date: "2024-12-30", desktop: 454, mobile: 380, tablet: 400 },
               { date: "2024-05-01", desktop: 165, mobile: 220, tablet: 180 },
               { date: "2024-05-02", desktop: 293, mobile: 310, tablet: 250 },
               { date: "2024-05-03", desktop: 247, mobile: 190, tablet: 200 },

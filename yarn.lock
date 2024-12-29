@@ -1042,6 +1042,46 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
+"@uiw/react-heat-map@^2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@uiw/react-heat-map/-/react-heat-map-2.3.2.tgz#06fddafcb5e8fc5680f9aee2e3d4dd95e8cf8686"
+  integrity sha512-E09r7Aou9iN0TtkIircVzYeMiU/TIKXBaCpQWW+2maq3zGg1FIqRBRaTyOm8FUo1vUthiT7CjLldjhoRBVEXlw==
+
+"@uiw/react-overlay-trigger@^4.22.3":
+  version "4.22.3"
+  resolved "https://registry.yarnpkg.com/@uiw/react-overlay-trigger/-/react-overlay-trigger-4.22.3.tgz#2aeb5b1c1b7813f899669119fbac58e84aad7884"
+  integrity sha512-7YT+kaPCpMYWwmOPFGf4AHPJsEVswgqzDSUdDbqIz/NWbQbl5+4hCbqsz3xEnIL5EW+plKnKq4E3Ou3DjRqPiQ==
+  dependencies:
+    "@uiw/react-overlay" "^4.22.3"
+    "@uiw/utils" "^4.22.3"
+
+"@uiw/react-overlay@^4.22.3":
+  version "4.22.3"
+  resolved "https://registry.yarnpkg.com/@uiw/react-overlay/-/react-overlay-4.22.3.tgz#2a46c0e647aeab36b13e5099584fec2a9217a995"
+  integrity sha512-SFHY3kU3Citpf/QdXzQQzMyMpQ/fpLPIoOSS1xwBQgRTqcGR7h7yjSpNYfZxK5xS6/MxFs3HzFvln+IVDOTW1g==
+  dependencies:
+    "@uiw/react-portal" "^4.22.3"
+    "@uiw/utils" "^4.22.3"
+    react-transition-group "~4.4.2"
+
+"@uiw/react-portal@^4.22.3":
+  version "4.22.3"
+  resolved "https://registry.yarnpkg.com/@uiw/react-portal/-/react-portal-4.22.3.tgz#55f27c14ef7c2517f394f74e2b6df28929a56102"
+  integrity sha512-YvTJBNdc0uPsfI2Spuo0ThnavMjdzNn1d0NNv0zoIDkZ30ccxL3USSORzhg5T3SjBFwLxFQ1VxaP7nCJJEVL3Q==
+
+"@uiw/react-tooltip@^4.22.3":
+  version "4.22.3"
+  resolved "https://registry.yarnpkg.com/@uiw/react-tooltip/-/react-tooltip-4.22.3.tgz#bc3292b4606cc1d357d2946c840acb44134b5a9f"
+  integrity sha512-wGn7tWKUK5Ara0M5+ASSWqaCHYzIOYp9DIlzyQ12D06h06IUtzt2vIAbH0ovLNRhCYAuWyBJI6tV65jAkYFfTw==
+  dependencies:
+    "@uiw/react-overlay-trigger" "^4.22.3"
+    "@uiw/utils" "^4.22.3"
+
+"@uiw/utils@^4.22.3":
+  version "4.22.3"
+  resolved "https://registry.yarnpkg.com/@uiw/utils/-/utils-4.22.3.tgz#cb346c589620a89479b39ec6a81dd3d04f09d7e2"
+  integrity sha512-XEi6PBE7mvL1P+6Wa/+npKmmDovkVeXpw0XDfsdrmaRXYTUc05RYXyOy3olVmglgutagTQlCUJzAP+GXaSgw/A==
+
 "@vitejs/plugin-react@^4.2.0":
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-react/-/plugin-react-4.3.4.tgz#c64be10b54c4640135a5b28a2432330e88ad7c20"
@@ -2059,7 +2099,7 @@ react-style-singleton@^2.2.1, react-style-singleton@^2.2.2:
     get-nonce "^1.0.0"
     tslib "^2.0.0"
 
-react-transition-group@^4.4.5:
+react-transition-group@^4.4.5, react-transition-group@~4.4.2:
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.4.5.tgz#e53d4e3f3344da8521489fbef8f2581d42becdd1"
   integrity sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==
