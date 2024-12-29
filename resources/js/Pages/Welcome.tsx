@@ -48,7 +48,7 @@ export default function Welcome({
           />
         </div>
 
-        <div className='grid grid-cols-[2fr,1fr] gap-4 p-2'>
+        <div className='grid md:grid-cols-[2fr,1fr] gap-4 p-2'>
           <AreaChartC
             title='Area Chart'
             description='January - June 2024'

@@ -31,14 +31,29 @@ export const HeatMapC = ({ value }: HeatMapCProps) => {
   return (
     <Card>
       <CardContent>
-        <div className='grid grid-cols-[2fr,1fr] gap-4 p-2'>
+        <div className='grid grid-cols-[3fr,1fr] gap-4 p-2'>
           <HeatMap
             value={value}
             weekLabels={["", "Mon", "", "Wed", "", "Fri", ""]}
+            monthLabels={[
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec",
+            ]}
             startDate={new Date(`${year}/01/01`)}
             endDate={new Date(`${year}/12/31`)}
-            width={800}
-            height={130}
+            width={940}
+            height={170}
+            rectSize={15}
           />
           <Select value={year} onValueChange={setYear}>
             <SelectTrigger
