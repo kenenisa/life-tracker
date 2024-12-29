@@ -101,21 +101,35 @@ export const LineChartC = ({
               tickLine={false}
               axisLine={false}
               tickMargin={8}
-              tickFormatter={(value) => value.slice(0, 3)}
+              tickFormatter={(value) => {
+                const date = new Date(value);
+                return date.toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                });
+              }}
             />
-            <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+            <ChartTooltip
+              cursor={false}
+              content={
+                <ChartTooltipContent
+                  labelFormatter={(value) => {
+                    return new Date(value).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                    });
+                  }}
+                  indicator='dot'
+                />
+              }
+            />
             {datakeys.map((item, index) => (
               <Line
                 dataKey={item}
                 type='monotone'
                 stroke={`var(--color-${item})`}
                 strokeWidth={2}
-                dot={{
-                  fill: `var(--color-${item})`,
-                }}
-                activeDot={{
-                  r: 6,
-                }}
+                dot={false}
                 key={index}
               ></Line>
             ))}

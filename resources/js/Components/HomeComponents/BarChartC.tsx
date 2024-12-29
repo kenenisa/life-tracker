@@ -1,3 +1,4 @@
+import * as React from "react";
 import { CartesianGrid, Bar, BarChart, XAxis, LabelList } from "recharts";
 
 import {
@@ -14,15 +15,22 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/Components/ui/chart";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/Components/ui/select";
 
 interface ChartDataInterface {
-  month: string;
+  date: string;
   [key: string]: number | string;
 }
 
 interface BarChartCProps {
   title: string;
-  timeframe: string;
+  description: string;
   chartData: ChartDataInterface[];
   chartConfig: ChartConfig;
   datakeys: string[];
@@ -31,23 +39,60 @@ interface BarChartCProps {
 
 export const BarChartC = ({
   title,
-  timeframe,
+  description,
   chartData,
   chartConfig,
   datakeys,
-  stacked = true,
+  stacked = false,
 }: BarChartCProps) => {
+  const [timeRange, setTimeRange] = React.useState("7d");
+
+  const filteredData = chartData.filter((item) => {
+    const date = new Date(item.date);
+    const referenceDate = new Date("2024-06-30");
+    let daysToSubtract = 90;
+    if (timeRange === "30d") {
+      daysToSubtract = 30;
+    } else if (timeRange === "7d") {
+      daysToSubtract = 7;
+    }
+    const startDate = new Date(referenceDate);
+    startDate.setDate(startDate.getDate() - daysToSubtract);
+    return date >= startDate;
+  });
+
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{timeframe}</CardDescription>
+      <CardHeader className='flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row'>
+        <div className='grid flex-1 gap-1 text-center sm:text-left'>
+          <CardTitle>{title}</CardTitle>
+          <CardDescription>{description}</CardDescription>
+        </div>
+        <Select value={timeRange} onValueChange={setTimeRange}>
+          <SelectTrigger
+            className='w-[160px] rounded-lg sm:ml-auto'
+            aria-label='Select a value'
+          >
+            <SelectValue placeholder='Last 3 months' />
+          </SelectTrigger>
+          <SelectContent className='rounded-xl'>
+            <SelectItem value='90d' className='rounded-lg'>
+              Last 3 months
+            </SelectItem>
+            <SelectItem value='30d' className='rounded-lg'>
+              Last 30 days
+            </SelectItem>
+            <SelectItem value='7d' className='rounded-lg'>
+              Last 7 days
+            </SelectItem>
+          </SelectContent>
+        </Select>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
           <BarChart
             accessibilityLayer
-            data={chartData}
+            data={filteredData}
             margin={{
               left: 12,
               right: 12,
@@ -55,13 +100,32 @@ export const BarChartC = ({
           >
             <CartesianGrid vertical={false} />
             <XAxis
-              dataKey='month'
+              dataKey='date'
               tickLine={false}
               axisLine={false}
               tickMargin={8}
-              tickFormatter={(value) => value.slice(0, 3)}
+              tickFormatter={(value) => {
+                const date = new Date(value);
+                return date.toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                });
+              }}
             />
-            <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+            <ChartTooltip
+              cursor={false}
+              content={
+                <ChartTooltipContent
+                  labelFormatter={(value) => {
+                    return new Date(value).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                    });
+                  }}
+                  indicator='dot'
+                />
+              }
+            />
             {datakeys.map((item, index) => (
               <Bar
                 dataKey={item}
@@ -70,14 +134,7 @@ export const BarChartC = ({
                 radius={4}
                 key={index}
                 {...(stacked ? { stackId: "a" } : {})}
-              >
-                <LabelList
-                  position='top'
-                  offset={12}
-                  className='fill-foreground'
-                  fontSize={12}
-                />
-              </Bar>
+              ></Bar>
             ))}
           </BarChart>
         </ChartContainer>
