@@ -26,18 +26,7 @@ export default function Welcome({
     <>
       <DefaultLayout>
         <Head title='Welcome' />
-        <HeatMapC
-          value={[
-            { date: "2024/01/11", count: 2 },
-            { date: "2024/01/12", count: 20 },
-            { date: "2024/01/13", count: 10 },
-            { date: "2024/04/11", count: 2 },
-            { date: "2024/05/01", count: 5 },
-            { date: "2024/05/02", count: 5 },
-            { date: "2024/05/04", count: 11 },
-            { date: "2023/05/05", count: 5 },
-          ]}
-        />
+
         <div className='grid grid-cols-1 gap-4 md:grid-cols-3 p-2'>
           <CardSmallC
             title='Total Income'
@@ -203,6 +192,18 @@ export default function Welcome({
           />
         </div>
         <ResizableC />
+        <HeatMapC
+          value={[
+            { date: "2024/01/11", count: 2 },
+            { date: "2024/01/12", count: 20 },
+            { date: "2024/01/13", count: 10 },
+            { date: "2024/04/11", count: 2 },
+            { date: "2024/05/01", count: 5 },
+            { date: "2024/05/02", count: 5 },
+            { date: "2022/05/04", count: 11 },
+            { date: "2023/05/05", count: 5 },
+          ]}
+        />
       </DefaultLayout>
     </>
   );

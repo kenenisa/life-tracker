@@ -45,8 +45,7 @@ export const AreaChartC = ({
 }: AreaChartCProps) => {
   const [timeRange, setTimeRange] = React.useState("7d");
 
-  const filteredData = chartData.filter((item) => {
-    const date = new Date(item.date);
+  const calcurateDates = () => {
     const referenceDate = new Date();
     let daysToSubtract = 90;
     if (timeRange === "30d") {
@@ -55,9 +54,40 @@ export const AreaChartC = ({
       daysToSubtract = 7;
     }
     const startDate = new Date(referenceDate);
+
+    const temporaryChartData = [];
     startDate.setDate(startDate.getDate() - daysToSubtract);
-    return date >= startDate;
-  });
+    for (
+      let date = startDate;
+      date <= referenceDate;
+      date.setDate(date.getDate() + 1)
+    ) {
+      const formattedDate = String(date.toISOString().slice(0, 10));
+      let found = false;
+      for (const item of chartData) {
+        if (item.date === formattedDate) {
+          found = true;
+          temporaryChartData.push(item);
+          break;
+        }
+      }
+      if (!found) {
+        const newData: ChartDataInterface = {
+          date: formattedDate,
+          ...datakeys.reduce((acc, key) => ({ ...acc, [key]: 0 }), {}),
+        };
+        temporaryChartData.push(newData);
+      }
+    }
+    const sortedData = temporaryChartData.sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateA.getTime() - dateB.getTime();
+    });
+    return sortedData;
+  };
+
+  const filteredData = calcurateDates();
 
   return (
     <Card>

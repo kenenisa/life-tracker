@@ -53,7 +53,7 @@ export const HeatMapC = ({ value }: HeatMapCProps) => {
                 String(new Date().getFullYear() - 1),
                 String(new Date().getFullYear() - 2),
               ].map((item, index) => (
-                <SelectItem value={item} className='rounded-lg'>
+                <SelectItem value={item} key={index} className='rounded-lg'>
                   {item}
                 </SelectItem>
               ))}

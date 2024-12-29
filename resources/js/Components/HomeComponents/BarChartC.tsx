@@ -47,9 +47,8 @@ export const BarChartC = ({
 }: BarChartCProps) => {
   const [timeRange, setTimeRange] = React.useState("7d");
 
-  const filteredData = chartData.filter((item) => {
-    const date = new Date(item.date);
-    const referenceDate = new Date().toISOString().slice(0, 10);
+  const calcurateDates = () => {
+    const referenceDate = new Date();
     let daysToSubtract = 90;
     if (timeRange === "30d") {
       daysToSubtract = 30;
@@ -57,10 +56,40 @@ export const BarChartC = ({
       daysToSubtract = 7;
     }
     const startDate = new Date(referenceDate);
-    startDate.setDate(startDate.getDate() - daysToSubtract);
-    return date >= startDate;
-  });
 
+    const temporaryChartData = [];
+    startDate.setDate(startDate.getDate() - daysToSubtract);
+    for (
+      let date = startDate;
+      date <= referenceDate;
+      date.setDate(date.getDate() + 1)
+    ) {
+      const formattedDate = String(date.toISOString().slice(0, 10));
+      let found = false;
+      for (const item of chartData) {
+        if (item.date === formattedDate) {
+          found = true;
+          temporaryChartData.push(item);
+          break;
+        }
+      }
+      if (!found) {
+        const newData: ChartDataInterface = {
+          date: formattedDate,
+          ...datakeys.reduce((acc, key) => ({ ...acc, [key]: 0 }), {}),
+        };
+        temporaryChartData.push(newData);
+      }
+    }
+    const sortedData = temporaryChartData.sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateA.getTime() - dateB.getTime();
+    });
+    return sortedData;
+  };
+
+  const filteredData = calcurateDates();
   return (
     <Card>
       <CardHeader className='flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row'>
