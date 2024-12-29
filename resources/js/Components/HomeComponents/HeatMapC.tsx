@@ -58,6 +58,9 @@ export const HeatMapC = ({ value, color = "#000" }: HeatMapCProps) => {
             panelColors={{
               1: color,
             }}
+            rectProps={{
+              rx: 4,
+            }}
             rectRender={(props, data) => {
               // if (!data.count) return <rect {...props} />;
               return (
