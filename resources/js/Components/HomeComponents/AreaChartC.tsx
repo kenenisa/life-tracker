@@ -30,7 +30,7 @@ interface ChartDataInterface {
 }
 interface AreaChartCProps {
   title: string;
-  timeframe: string;
+  description: string;
   chartData: ChartDataInterface[];
   chartConfig: ChartConfig;
   datakeys: string[];
@@ -38,7 +38,7 @@ interface AreaChartCProps {
 
 export const AreaChartC = ({
   title,
-  timeframe,
+  description,
   chartData,
   chartConfig,
   datakeys,

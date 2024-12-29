@@ -26,7 +26,7 @@ export default function Welcome({
         <Head title='Welcome' />
         <AreaChartC
           title='Area Chart'
-          timeframe='January - June 2024'
+          description='January - June 2024'
           chartData={[
             { date: "2024-04-01", desktop: 222, mobile: 150, tablet: 180 },
             { date: "2024-04-02", desktop: 97, mobile: 180, tablet: 120 },
@@ -165,7 +165,7 @@ export default function Welcome({
         />
         <LineChartC
           title='Line Chart - Single'
-          timeframe='January - June 2024'
+          description='January - June 2024'
           chartData={[
             { date: "2024-04-01", desktop: 222, mobile: 150, tablet: 180 },
             { date: "2024-04-02", desktop: 97, mobile: 180, tablet: 120 },
