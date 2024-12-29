@@ -6,7 +6,7 @@ import { BarChartC } from "@/Components/HomeComponents/BarChartC";
 import { PieChartC } from "@/Components/HomeComponents/PieChartC";
 import { RadialChartC } from "@/Components/HomeComponents/RadialChartC";
 import { AreaChartC } from "@/Components/HomeComponents/AreaChartC";
-import { table } from "console";
+import { CardSmallC } from "@/Components/HomeComponents/CardSmallC";
 
 export default function Welcome({
   auth,
@@ -24,6 +24,26 @@ export default function Welcome({
     <>
       <DefaultLayout>
         <Head title='Welcome' />
+        <div className='grid grid-cols-1 gap-4 md:grid-cols-3 p-2'>
+          <CardSmallC
+            title='Total Income'
+            value={laravelVersion}
+            startColor='#2563EB'
+            endColor='#9D4ED8'
+          />
+          <CardSmallC
+            title='Total Expense'
+            value={laravelVersion}
+            startColor='#2563EB'
+            endColor='#9D4ED8'
+          />
+          <CardSmallC
+            title='Net profit'
+            value={laravelVersion}
+            startColor='#2563EB'
+            endColor='#9D4ED8'
+          />
+        </div>
         <AreaChartC
           title='Area Chart'
           description='January - June 2024'
