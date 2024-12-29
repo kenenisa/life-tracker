@@ -12,6 +12,7 @@ import { HeatMapC } from "@/components/HomeComponents/HeatMapC";
 import { TableC } from "@/components/HomeComponents/TableC";
 import { VerticalBarChartC } from "@/components/HomeComponents/VerticalBarChartC";
 import { WeekDaysTabC } from "@/components/HomeComponents/WeekDaysTabC";
+import { MuscleMapC } from "@/components/HomeComponents/MuscleMapC";
 
 export default function Welcome({
   auth,
@@ -144,94 +145,97 @@ export default function Welcome({
           }}
           datakeys={["car", "mobile", "tablet"]}
         />
-        <WeekDaysTabC
-          workoutData={[
-            {
-              day: "mon",
-              category: "back",
-              title: "pull-ups",
-              text: "3 sets X 10 reps",
-            },
-            {
-              day: "mon",
-              category: "biceps",
-              title: "curls",
-              text: "3 sets X 10 reps",
-            },
-            {
-              day: "mon",
-              category: "triceps",
-              title: "pushups",
-              text: "3 sets X 10 reps",
-            },
-            {
-              day: "tue",
-              category: "back",
-              title: "pull-ups",
-              text: "3 sets X 10 reps",
-            },
-            {
-              day: "tue",
-              category: "biceps",
-              title: "curls",
-              text: "3 sets X 10 reps",
-            },
-            {
-              day: "tue",
-              category: "triceps",
-              title: "pushups",
-              text: "3 sets X 10 reps",
-            },
-            {
-              day: "wed",
-              category: "back",
-              title: "pull-ups",
-              text: "3 sets X 10 reps",
-            },
-            {
-              day: "wed",
-              category: "biceps",
-              title: "curls",
-              text: "3 sets X 10 reps",
-            },
-            {
-              day: "wed",
-              category: "triceps",
-              title: "pushups",
-              text: "3 sets X 10 reps",
-            },
-            {
-              day: "thu",
-              category: "back",
-              title: "pull-ups",
-              text: "3 sets X 10 reps",
-            },
-            {
-              day: "thu",
-              category: "biceps",
-              title: "curls",
-              text: "3 sets X 10 reps",
-            },
-            {
-              day: "thu",
-              category: "triceps",
-              title: "pushups",
-              text: "3 sets X 10 reps",
-            },
-            {
-              day: "fri",
-              category: "back",
-              title: "pull-ups",
-              text: "3 sets X 10 reps",
-            },
-            {
-              day: "fri",
-              category: "biceps",
-              title: "curls",
-              text: "3 sets X 10 reps",
-            },
-          ]}
-        />
+        <div className='grid grid-cols-[1fr,3fr]'>
+          <MuscleMapC />
+          <WeekDaysTabC
+            workoutData={[
+              {
+                day: "mon",
+                category: "back",
+                title: "pull-ups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "mon",
+                category: "biceps",
+                title: "curls",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "mon",
+                category: "triceps",
+                title: "pushups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "tue",
+                category: "back",
+                title: "pull-ups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "tue",
+                category: "biceps",
+                title: "curls",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "tue",
+                category: "triceps",
+                title: "pushups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "wed",
+                category: "back",
+                title: "pull-ups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "wed",
+                category: "biceps",
+                title: "curls",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "wed",
+                category: "triceps",
+                title: "pushups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "thu",
+                category: "back",
+                title: "pull-ups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "thu",
+                category: "biceps",
+                title: "curls",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "thu",
+                category: "triceps",
+                title: "pushups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "fri",
+                category: "back",
+                title: "pull-ups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "fri",
+                category: "biceps",
+                title: "curls",
+                text: "3 sets X 10 reps",
+              },
+            ]}
+          />
+        </div>
         <HeatMapC
           value={[
             { date: "2024/01/11", count: 2 },
