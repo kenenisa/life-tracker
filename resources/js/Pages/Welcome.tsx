@@ -9,6 +9,7 @@ import { AreaChartC } from "@/components/HomeComponents/AreaChartC";
 import { CardSmallC } from "@/components/HomeComponents/CardSmallC";
 import { ResizableC } from "@/components/HomeComponents/ResizableC";
 import { HeatMapC } from "@/components/HomeComponents/HeatMapC";
+import { TableC } from "@/components/HomeComponents/TableC";
 
 export default function Welcome({
   auth,
@@ -204,6 +205,60 @@ export default function Welcome({
             { date: "2023/05/05", count: 5 },
           ]}
         />
+        <div className='grid grid-cols-[2fr,1fr]'>
+          <TableC
+            datakeys={[
+              "invoice",
+              "paymentStatus",
+              "totalAmount",
+              "paymentMethod",
+            ]}
+            value={[
+              {
+                invoice: "INV001",
+                paymentStatus: "Paid",
+                totalAmount: "$250.00",
+                paymentMethod: "Credit Card",
+              },
+              {
+                invoice: "INV002",
+                paymentStatus: "Pending",
+                totalAmount: "$150.00",
+                paymentMethod: "PayPal",
+              },
+              {
+                invoice: "INV003",
+                paymentStatus: "Unpaid",
+                totalAmount: "$350.00",
+                paymentMethod: "Bank Transfer",
+              },
+              {
+                invoice: "INV004",
+                paymentStatus: "Paid",
+                totalAmount: "$450.00",
+                paymentMethod: "Credit Card",
+              },
+              {
+                invoice: "INV005",
+                paymentStatus: "Paid",
+                totalAmount: "$550.00",
+                paymentMethod: "PayPal",
+              },
+              {
+                invoice: "INV006",
+                paymentStatus: "Pending",
+                totalAmount: "$200.00",
+                paymentMethod: "Bank Transfer",
+              },
+              {
+                invoice: "INV007",
+                paymentStatus: "Unpaid",
+                totalAmount: "$300.00",
+                paymentMethod: "Credit Card",
+              },
+            ]}
+          />
+        </div>
       </DefaultLayout>
     </>
   );
