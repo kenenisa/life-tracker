@@ -22,10 +22,11 @@ interface HeatMapDataInterface {
   count: number;
 }
 interface HeatMapCProps {
+  color?: string;
   value: HeatMapDataInterface[];
 }
 
-export const HeatMapC = ({ value }: HeatMapCProps) => {
+export const HeatMapC = ({ value, color = "#000" }: HeatMapCProps) => {
   const [year, setYear] = React.useState(String(new Date().getFullYear()));
 
   return (
@@ -54,6 +55,23 @@ export const HeatMapC = ({ value }: HeatMapCProps) => {
             width={940}
             height={170}
             rectSize={15}
+            panelColors={{
+              1: color,
+            }}
+            rectRender={(props, data) => {
+              // if (!data.count) return <rect {...props} />;
+              return (
+                <Tooltip
+                  placement='top'
+                  content={new Date(data.date).toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                  })}
+                >
+                  <rect {...props} />
+                </Tooltip>
+              );
+            }}
           />
           <Select value={year} onValueChange={setYear}>
             <SelectTrigger
@@ -79,11 +97,3 @@ export const HeatMapC = ({ value }: HeatMapCProps) => {
     </Card>
   );
 };
-// rectRender={(props, data) => {
-//   // if (!data.count) return <rect {...props} />;
-//   return (
-//     <Tooltip placement='top' content={`count: ${data.count || 0}`}>
-//       <rect {...props} />
-//     </Tooltip>
-//   );
-// }}

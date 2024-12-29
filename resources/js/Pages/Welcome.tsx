@@ -39,6 +39,7 @@ export default function Welcome({
             { date: "2022/05/04", count: 11 },
             { date: "2023/05/05", count: 5 },
           ]}
+          color='#D6745C'
         />
       </DefaultLayout>
     </>
