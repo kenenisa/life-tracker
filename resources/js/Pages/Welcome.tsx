@@ -30,6 +30,97 @@ export default function Welcome({
     <>
       <DefaultLayout>
         <Head title='Welcome' />
+        <div className='grid grid-cols-[1fr,3fr]'>
+          <MuscleMapC />
+          <WeekDaysTabC
+            workoutData={[
+              {
+                day: "mon",
+                category: "back",
+                title: "pull-ups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "mon",
+                category: "biceps",
+                title: "curls",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "mon",
+                category: "triceps",
+                title: "pushups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "tue",
+                category: "back",
+                title: "pull-ups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "tue",
+                category: "biceps",
+                title: "curls",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "tue",
+                category: "triceps",
+                title: "pushups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "wed",
+                category: "back",
+                title: "pull-ups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "wed",
+                category: "biceps",
+                title: "curls",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "wed",
+                category: "triceps",
+                title: "pushups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "thu",
+                category: "back",
+                title: "pull-ups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "thu",
+                category: "biceps",
+                title: "curls",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "thu",
+                category: "triceps",
+                title: "pushups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "fri",
+                category: "back",
+                title: "pull-ups",
+                text: "3 sets X 10 reps",
+              },
+              {
+                day: "fri",
+                category: "biceps",
+                title: "curls",
+                text: "3 sets X 10 reps",
+              },
+            ]}
+          />
+        </div>
         <AreaChartC
           title='Area Chart'
           description='January - June 2024'
@@ -145,97 +236,7 @@ export default function Welcome({
           }}
           datakeys={["car", "mobile", "tablet"]}
         />
-        <div className='grid grid-cols-[1fr,3fr]'>
-          <MuscleMapC />
-          <WeekDaysTabC
-            workoutData={[
-              {
-                day: "mon",
-                category: "back",
-                title: "pull-ups",
-                text: "3 sets X 10 reps",
-              },
-              {
-                day: "mon",
-                category: "biceps",
-                title: "curls",
-                text: "3 sets X 10 reps",
-              },
-              {
-                day: "mon",
-                category: "triceps",
-                title: "pushups",
-                text: "3 sets X 10 reps",
-              },
-              {
-                day: "tue",
-                category: "back",
-                title: "pull-ups",
-                text: "3 sets X 10 reps",
-              },
-              {
-                day: "tue",
-                category: "biceps",
-                title: "curls",
-                text: "3 sets X 10 reps",
-              },
-              {
-                day: "tue",
-                category: "triceps",
-                title: "pushups",
-                text: "3 sets X 10 reps",
-              },
-              {
-                day: "wed",
-                category: "back",
-                title: "pull-ups",
-                text: "3 sets X 10 reps",
-              },
-              {
-                day: "wed",
-                category: "biceps",
-                title: "curls",
-                text: "3 sets X 10 reps",
-              },
-              {
-                day: "wed",
-                category: "triceps",
-                title: "pushups",
-                text: "3 sets X 10 reps",
-              },
-              {
-                day: "thu",
-                category: "back",
-                title: "pull-ups",
-                text: "3 sets X 10 reps",
-              },
-              {
-                day: "thu",
-                category: "biceps",
-                title: "curls",
-                text: "3 sets X 10 reps",
-              },
-              {
-                day: "thu",
-                category: "triceps",
-                title: "pushups",
-                text: "3 sets X 10 reps",
-              },
-              {
-                day: "fri",
-                category: "back",
-                title: "pull-ups",
-                text: "3 sets X 10 reps",
-              },
-              {
-                day: "fri",
-                category: "biceps",
-                title: "curls",
-                text: "3 sets X 10 reps",
-              },
-            ]}
-          />
-        </div>
+
         <HeatMapC
           value={[
             { date: "2024/01/11", count: 2 },
@@ -247,7 +248,7 @@ export default function Welcome({
             { date: "2022/05/04", count: 11 },
             { date: "2023/05/05", count: 5 },
           ]}
-          color='#D6745C'
+          color='#D00000'
         />
       </DefaultLayout>
     </>

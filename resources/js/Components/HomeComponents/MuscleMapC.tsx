@@ -2,6 +2,7 @@ import React from "react";
 import Model, { IExerciseData, IMuscleStats } from "react-body-highlighter";
 
 export const MuscleMapC = () => {
+  const [displayData, setDisplayData] = React.useState<String>("Muscle Map");
   const data: IExerciseData[] = [
     { name: "Bench Press", muscles: ["chest", "triceps", "front-deltoids"] },
     { name: "Push Ups", muscles: ["chest"] },
@@ -23,29 +24,34 @@ export const MuscleMapC = () => {
   const handleClick = React.useCallback(
     ({ muscle, data }: IMuscleStats) => {
       const { exercises, frequency } = data;
-
-      alert(
-        `You clicked the ${muscle}! You've worked out this muscle ${frequency} times through the following exercises: ${JSON.stringify(exercises)}`
-      );
+      setDisplayData(muscle + ":" + frequency + " exercises");
     },
     [data]
   );
 
   return (
-    <div className='flex'>
-      <Model
-        data={data}
-        style={{ width: "20rem", padding: "5rem" }}
-        onClick={handleClick}
-        highlightedColors={["#D6745C", "#06745C"]}
-      />
-      <Model
-        type='posterior'
-        data={data}
-        style={{ width: "20rem", padding: "5rem" }}
-        onClick={handleClick}
-        highlightedColors={["#D6745C", "#06745C"]}
-      />
+    <div className='flex flex-col'>
+      <div className='flex flex-col items-center justify-center'>
+        <h1 className='text-2xl font-bold'>{displayData}</h1>
+        <p className='text-sm text-gray-500 ml-2'>
+          click on a muscle to see the exercises you've done for it
+        </p>
+      </div>
+      <div className='flex'>
+        <Model
+          data={data}
+          style={{ width: "20rem", padding: "5rem" }}
+          onClick={handleClick}
+          highlightedColors={["#F6948C", "#D00000"]}
+        />
+        <Model
+          type='posterior'
+          data={data}
+          style={{ width: "20rem", padding: "5rem" }}
+          onClick={handleClick}
+          highlightedColors={["#D00000", "#F6948C"]}
+        />
+      </div>
     </div>
   );
 };
