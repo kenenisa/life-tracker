@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 import {
   AudioWaveform,
   BookOpen,
@@ -10,19 +10,25 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
-} from "lucide-react"
+  Banknote,
+  Activity,
+  Apple,
+  BedDouble,
+} from "lucide-react";
 
-import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
-import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
+import { NavMain } from "@/components/nav-main";
+import { NavProjects } from "@/components/nav-projects";
+import { NavUser } from "@/components/nav-user";
+import { TeamSwitcher } from "@/components/team-switcher";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
+
+
 
 // This is sample data.
 const data = {
@@ -50,9 +56,9 @@ const data = {
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "Finance",
       url: "#",
-      icon: SquareTerminal,
+      icon: Banknote,
       isActive: true,
       items: [
         {
@@ -70,9 +76,9 @@ const data = {
       ],
     },
     {
-      title: "Models",
+      title: "Fitness",
       url: "#",
-      icon: Bot,
+      icon: Activity,
       items: [
         {
           title: "Genesis",
@@ -89,9 +95,9 @@ const data = {
       ],
     },
     {
-      title: "Documentation",
+      title: "Diet",
       url: "#",
-      icon: BookOpen,
+      icon: Apple,
       items: [
         {
           title: "Introduction",
@@ -112,9 +118,9 @@ const data = {
       ],
     },
     {
-      title: "Settings",
+      title: "Sleep",
       url: "#",
-      icon: Settings2,
+      icon: BedDouble,
       items: [
         {
           title: "General",
@@ -152,11 +158,11 @@ const data = {
       icon: Map,
     },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="icon" {...props}>
+    <Sidebar collapsible='icon' {...props}>
       <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
@@ -169,5 +175,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }
