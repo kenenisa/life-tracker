@@ -16,11 +16,14 @@ class FinanceFactory extends Factory
 
     public function definition()
     {
+        $date = $this->faker->dateTimeThisYear();
         return [
             'income' => $this->faker->randomFloat(2, 1000, 5000),
             'expense' => $this->faker->randomFloat(2, 100, 1000),
             'category_id' => Category::factory(),
             'user_id' => User::factory(),
+            'created_at' => $date,
+            'updated_at' => $date,
         ];
     }
 }
