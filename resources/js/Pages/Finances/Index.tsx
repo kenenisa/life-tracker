@@ -137,7 +137,12 @@ export default function ({ data }: any) {
           chartConfig={chartConfig}
           datakeys={datakeys}
         />
-        <HeatMapC value={chartData} />
+        <HeatMapC
+          value={chartData}
+          baseColor='#008800'
+          secondColor='#008800'
+          thirdColor='#008800'
+        />
         <div className='grid grid-cols-[2fr,1fr] gap-10'>
           <TableC datakeys={["date", ...datakeys]} value={chartData} />
           <VerticalBarChartC
