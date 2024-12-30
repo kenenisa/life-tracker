@@ -20,7 +20,7 @@ const data = {
         avatar: "https://media.licdn.com/dms/image/v2/D4E03AQEmOnals1KEWw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696569520491?e=1741219200&v=beta&t=GnYe5g3bLBnIHL00Rsf9A2hkdxTQQPE_5N6xFI2jF74",
     },
     teams: [
-        { name: "Acme Inc", logo: Activity, plan: "Enterprise" },
+        { name: "Brook's team", logo: Activity, plan: "Personal" },
     ],
     navMain: [
         {
