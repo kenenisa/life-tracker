@@ -132,94 +132,46 @@ export default function ({ data }: any) {
             }}
           />
         </div>
-        <ResizableC chartData={chartData} chartConfig = {chartConfig} datakeys={datakeys} />
-        <HeatMapC
-          value={[
-            { date: "2024/01/11", count: 2 },
-            { date: "2024/01/12", count: 20 },
-            { date: "2024/01/13", count: 10 },
-            { date: "2024/04/11", count: 2 },
-            { date: "2024/05/01", count: 5 },
-            { date: "2024/05/02", count: 5 },
-            { date: "2022/05/04", count: 11 },
-            { date: "2023/05/05", count: 5 },
-          ]}
+        <ResizableC
+          chartData={chartData}
+          chartConfig={chartConfig}
+          datakeys={datakeys}
         />
+        <HeatMapC value={chartData} />
         <div className='grid grid-cols-[2fr,1fr] gap-10'>
-          <TableC
-            datakeys={[
-              "invoice",
-              "paymentStatus",
-              "totalAmount",
-              "paymentMethod",
-            ]}
-            value={[
-              {
-                invoice: "INV001",
-                paymentStatus: "Paid",
-                totalAmount: "$250.00",
-                paymentMethod: "Credit Card",
-              },
-              {
-                invoice: "INV002",
-                paymentStatus: "Pending",
-                totalAmount: "$150.00",
-                paymentMethod: "PayPal",
-              },
-              {
-                invoice: "INV003",
-                paymentStatus: "Unpaid",
-                totalAmount: "$350.00",
-                paymentMethod: "Bank Transfer",
-              },
-              {
-                invoice: "INV004",
-                paymentStatus: "Paid",
-                totalAmount: "$450.00",
-                paymentMethod: "Credit Card",
-              },
-              {
-                invoice: "INV005",
-                paymentStatus: "Paid",
-                totalAmount: "$550.00",
-                paymentMethod: "PayPal",
-              },
-              {
-                invoice: "INV006",
-                paymentStatus: "Pending",
-                totalAmount: "$200.00",
-                paymentMethod: "Bank Transfer",
-              },
-              {
-                invoice: "INV007",
-                paymentStatus: "Unpaid",
-                totalAmount: "$300.00",
-                paymentMethod: "Credit Card",
-              },
-            ]}
-          />
+          <TableC datakeys={datakeys} value={chartData} />
           <VerticalBarChartC
             chartData={[
-              { title: "chrome", amount: 275, fill: "var(--color-chrome)" },
-              { title: "safari", amount: 200, fill: "var(--color-safari)" },
-              { title: "firefox", amount: 187, fill: "var(--color-firefox)" },
-              { title: "edge", amount: 173, fill: "var(--color-edge)" },
-              { title: "other", amount: 90, fill: "var(--color-other)" },
+              {
+                title: "income",
+                amount: totalIncome,
+                fill: "var(--color-income)",
+              },
+              {
+                title: "expense",
+                amount: totalExpense,
+                fill: "var(--color-expense)",
+              },
+              {
+                title: "net",
+                amount: (totalIncome - totalExpense).toFixed(2),
+                fill: "var(--color-net)",
+              },
             ]}
             chartConfig={{
               visitors: {
                 label: "Visitors",
               },
-              chrome: {
-                label: "Chrome",
+              income: {
+                label: "income",
                 color: "hsl(var(--chart-1))",
               },
-              safari: {
-                label: "Safari",
+              expense: {
+                label: "expense",
                 color: "hsl(var(--chart-2))",
               },
-              firefox: {
-                label: "Firefox",
+              net: {
+                label: "net",
                 color: "hsl(var(--chart-3))",
               },
               edge: {
