@@ -16,11 +16,14 @@ class SleepFactory extends Factory
 
     public function definition()
     {
+        $date = $this->faker->dateTimeThisYear();
         return [
-            'start' => $this->faker->dateTimeBetween('-1 week', 'now'),
-            'end' => $this->faker->dateTimeBetween('now', '+1 week'),
+            'start' => $start = $this->faker->dateTimeBetween('-1 week', 'now'),
+            'end' => $this->faker->dateTimeBetween($start->modify('+4 hours'), $start->modify('+8 hours')),
             'biometric_id' => Biometric::factory(),
             'user_id' => User::factory(),
+            'created_at' => $date,
+            'updated_at' => $date,
         ];
     }
 }
