@@ -106,7 +106,7 @@ export function NavUser({
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
 
-                        <form action="/your-endpoint" method="POST" style={{ display: 'inline' }}>
+                        <form action="/logout" method="POST" style={{ display: 'inline' }}>
                             <input
                                 type="hidden"
                                 name="_token"
