@@ -1,36 +1,18 @@
 import * as React from "react";
-import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-  Banknote,
-  Activity,
-  Apple,
-  BedDouble,
-} from "lucide-react";
+import { Banknote, Activity, Apple, BedDouble } from "lucide-react";
 
-import { NavMain } from "@/components/nav-main";
-import { NavProjects } from "@/components/nav-projects";
-import { NavUser } from "@/components/nav-user";
-import { TeamSwitcher } from "@/components/team-switcher";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarRail,
 } from "@/components/ui/sidebar";
+import { NavMain } from "@/components/nav-main";
+import { NavProjects } from "@/components/nav-projects";
+import { NavUser } from "@/components/nav-user";
+import { TeamSwitcher } from "@/components/team-switcher";
 
-
-
-// This is sample data.
+// Sample data
 const data = {
   user: {
     name: "shadcn",
@@ -38,142 +20,66 @@ const data = {
     avatar: "/avatars/shadcn.jpg",
   },
   teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
+    { name: "Acme Inc", logo: Activity, plan: "Enterprise" },
+    { name: "Acme Corp.", logo: Banknote, plan: "Startup" },
+    { name: "Evil Corp.", logo: Apple, plan: "Free" },
   ],
   navMain: [
     {
       title: "Finance",
-      url: "#",
+      url: "/finance",
       icon: Banknote,
       isActive: true,
       items: [
-        {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
+        { title: "View", url: "/finance/view" },
+        { title: "Add", url: "/finances/add" },
       ],
     },
     {
       title: "Fitness",
-      url: "#",
+      url: "/fitness",
       icon: Activity,
+      isActive: false,
       items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
+        { title: "View", url: "/fitness/view" },
+        { title: "Add", url: "/fitness/add" },
       ],
     },
     {
       title: "Diet",
-      url: "#",
+      url: "/diet",
       icon: Apple,
+      isActive: false,
       items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
+        { title: "View", url: "/diet/view" },
+        { title: "Add", url: "/diet/add" },
       ],
     },
     {
       title: "Sleep",
-      url: "#",
+      url: "/sleep",
       icon: BedDouble,
+      isActive: false,
       items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
+        { title: "View", url: "/sleep/view" },
+        { title: "Add", url: "/sleep/add" },
       ],
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
     },
   ],
 };
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar() {
   return (
-    <Sidebar collapsible='icon' {...props}>
+    <Sidebar collapsible='icon'>
       <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>
-      <SidebarRail />
     </Sidebar>
   );
 }

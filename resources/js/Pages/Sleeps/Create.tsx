@@ -52,7 +52,7 @@ export default function Welcome() {
                     id='start'
                     placeholder='Start of your sleep'
                     required
-                    type='time'
+                    type='datetime-local'
                     value={formState.start}
                     onChange={handleChange}
                   />
@@ -63,7 +63,7 @@ export default function Welcome() {
                     id='end'
                     placeholder='End of your sleep'
                     required
-                    type='time'
+                    type='datetime-local'
                     value={formState.end}
                     onChange={handleChange}
                   />

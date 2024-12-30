@@ -22,11 +22,18 @@ interface HeatMapDataInterface {
   count: number;
 }
 interface HeatMapCProps {
-  color?: string;
+  baseColor?: string;
+  secondColor?: string;
+  thirdColor?: string;
   value: HeatMapDataInterface[];
 }
 
-export const HeatMapC = ({ value, color = "#000" }: HeatMapCProps) => {
+export const HeatMapC = ({
+  value,
+  baseColor = "#000",
+  secondColor = "#000",
+  thirdColor = "#000",
+}: HeatMapCProps) => {
   const [year, setYear] = React.useState(String(new Date().getFullYear()));
 
   return (
@@ -56,7 +63,9 @@ export const HeatMapC = ({ value, color = "#000" }: HeatMapCProps) => {
             height={170}
             rectSize={15}
             panelColors={{
-              1: color,
+              4: baseColor,
+              7: secondColor,
+              10: thirdColor,
             }}
             rectProps={{
               rx: 4,

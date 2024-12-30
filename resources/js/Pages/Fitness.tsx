@@ -239,8 +239,8 @@ export default function Welcome({
 
         <HeatMapC
           value={[
-            { date: "2024/01/11", count: 2 },
-            { date: "2024/01/12", count: 20 },
+            { date: "2024/12/11", count: 4 },
+            { date: "2024/12/12", count: 20 },
             { date: "2024/01/13", count: 10 },
             { date: "2024/04/11", count: 2 },
             { date: "2024/05/01", count: 5 },
@@ -248,7 +248,7 @@ export default function Welcome({
             { date: "2022/05/04", count: 11 },
             { date: "2023/05/05", count: 5 },
           ]}
-          color='#D00000'
+          baseColor='#D00000'
         />
       </DefaultLayout>
     </>
