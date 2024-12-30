@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Fitness;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class FitnessController extends BaseController
 {
@@ -36,7 +38,34 @@ class FitnessController extends BaseController
 
         return redirect()->route("{$this->routeName}.index")->with('success', 'Fitness entry created successfully!');
     }
+    /**
+     * Display a listing of the resource with relationships.
+     *
+     * @return Response
+     */
+    public function index(): Response
+    {
+        $fitnesses = $this->model::with(['user', 'workout', 'biometric'])->get(); // Eager load relationships
 
+        return Inertia::render("{$this->viewPath}/Index", [
+            'data' => $fitnesses,
+        ]);
+    }
+
+    /**
+     * Display the specified resource with relationships.
+     *
+     * @param int $id
+     * @return Response
+     */
+    public function show(int $id): Response
+    {
+        $fitness = $this->model::with(['user', 'workout', 'biometric'])->findOrFail($id); // Load related data
+
+        return Inertia::render("{$this->viewPath}/Show", [
+            'data' => $fitness,
+        ]);
+    }
     /**
      * Optionally, override other methods if you need to customize behavior.
      */
