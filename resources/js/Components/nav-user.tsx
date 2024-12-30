@@ -106,17 +106,26 @@ export function NavUser({
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
 
-                        <span onClick={() => {
-                            Inertia.visit('/logout', {
-                                // @ts-ignore
-                                method: 'POST',
-                            })
-                        }}>
-                            <DropdownMenuItem>
+                        <form action="/your-endpoint" method="POST" style={{ display: 'inline' }}>
+                            <input
+                                type="hidden"
+                                name="_token"
+                                value={document?.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || ''}
+                            />
+                            <button
+                                type="submit"
+                                style={{
+                                    background: 'none',
+                                    border: 'none',
+                                    color: 'blue',
+                                    textDecoration: 'underline',
+                                    cursor: 'pointer',
+                                }}
+                            >
                                 <LogOut />
-                                Log out
-                            </DropdownMenuItem>
-                        </span>
+                                Logout
+                            </button>
+                        </form>
                     </DropdownMenuContent>
                 </DropdownMenu>
             </SidebarMenuItem>
