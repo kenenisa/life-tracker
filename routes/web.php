@@ -14,6 +14,7 @@ use App\Http\Controllers\BiometricController;
 use App\Http\Controllers\MealController;
 
 Route::get('/', function () {
+    return redirect('/finances');
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -26,6 +27,7 @@ Route::get('/', function () {
 
 
 Route::get('/dashboard', function () {
+    return redirect('/finances');
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
