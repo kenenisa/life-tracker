@@ -105,27 +105,12 @@ export function NavUser({
                             </DropdownMenuItem>
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
-
-                        <form action="/logout" method="POST" style={{ display: 'inline' }}>
-                            <input
-                                type="hidden"
-                                name="_token"
-                                value={document?.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || ''}
-                            />
-                            <button
-                                type="submit"
-                                style={{
-                                    background: 'none',
-                                    border: 'none',
-                                    color: 'blue',
-                                    textDecoration: 'underline',
-                                    cursor: 'pointer',
-                                }}
-                            >
+                        <a href="/logout">
+                            <DropdownMenuItem>
                                 <LogOut />
-                                Logout
-                            </button>
-                        </form>
+                                Log out
+                            </DropdownMenuItem>
+                        </a>
                     </DropdownMenuContent>
                 </DropdownMenu>
             </SidebarMenuItem>
