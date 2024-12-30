@@ -139,7 +139,7 @@ export default function ({ data }: any) {
         />
         <HeatMapC value={chartData} />
         <div className='grid grid-cols-[2fr,1fr] gap-10'>
-          <TableC datakeys={datakeys} value={chartData} />
+          <TableC datakeys={["date", ...datakeys]} value={chartData} />
           <VerticalBarChartC
             chartData={[
               {

@@ -25,7 +25,7 @@ interface DataInterface {
 }
 
 export default function ({ data }: any) {
-  //   console.log(data);
+  console.log(data);
   console.log("open");
 
   function formatDate(dateString: string) {
@@ -64,8 +64,7 @@ export default function ({ data }: any) {
       <DefaultLayout>
         <Head title='Welcome' />
         <div className='grid grid-cols-[1fr,3fr]'>
-          nigger
-          {/* <MuscleMapC /> */}
+          <MuscleMapC />
           <WeekDaysTabC
             workoutData={[
               {
