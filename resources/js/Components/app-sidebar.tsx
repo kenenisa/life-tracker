@@ -43,16 +43,16 @@ const data = {
                 { title: "Add", url: "/fitnesses/create" },
             ],
         },
-        {
-            title: "Diet",
-            url: "/diets",
-            icon: Apple,
-            isActive: false,
-            items: [
-                { title: "View", url: "/diets" },
-                { title: "Add", url: "/diets/create" },
-            ],
-        },
+        // {
+        //     title: "Diet",
+        //     url: "/diets",
+        //     icon: Apple,
+        //     isActive: false,
+        //     items: [
+        //         { title: "View", url: "/diets" },
+        //         { title: "Add", url: "/diets/create" },
+        //     ],
+        // },
         {
             title: "Sleep",
             url: "/sleeps",
