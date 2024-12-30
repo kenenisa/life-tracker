@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Fitness;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class FitnessController extends BaseController
 {
@@ -42,12 +43,12 @@ class FitnessController extends BaseController
      *
      * @return Response
      */
-    public function index(): \Illuminate\Http\RedirectResponse
+    public function index(): Response
     {
         $fitnesses = $this->model::with(['user', 'workout', 'biometric'])->get(); // Eager load relationships
 
         return Inertia::render("{$this->viewPath}/Index", [
-            'fitnesses' => $fitnesses,
+            'data' => $fitnesses,
         ]);
     }
 
@@ -57,12 +58,12 @@ class FitnessController extends BaseController
      * @param int $id
      * @return Response
      */
-    public function show(int $id): \Illuminate\Http\RedirectResponse
+    public function show(int $id): Response
     {
         $fitness = $this->model::with(['user', 'workout', 'biometric'])->findOrFail($id); // Load related data
 
         return Inertia::render("{$this->viewPath}/Show", [
-            'fitness' => $fitness,
+            'data' => $fitness,
         ]);
     }
     /**
