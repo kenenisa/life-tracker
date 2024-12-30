@@ -193,7 +193,7 @@ export default function Welcome({
             }}
           />
         </div>
-        <ResizableC />
+        {/* <ResizableC /> */}
         <HeatMapC
           value={[
             { date: "2024/01/11", count: 2 },
