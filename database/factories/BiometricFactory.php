@@ -5,7 +5,7 @@ namespace Database\Factories;
 use App\Models\Biometric;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+//
 /**
  * @extends Factory<Biometric>
  */
