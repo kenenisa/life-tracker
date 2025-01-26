@@ -26,6 +26,7 @@ class FinanceController extends BaseController
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
+// or add other methods
     public function store(Request $request): \Illuminate\Http\RedirectResponse
     {
         $validated = $request->validate($this->rules);
