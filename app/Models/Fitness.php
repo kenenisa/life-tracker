@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Fitness extends Model
 {
     use HasFactory;
-    //
+    //get the user...
     /**
     * Get the user that owns the fitness.
      *
