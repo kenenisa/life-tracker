@@ -15,7 +15,7 @@ class Biometric extends Model
         'user_id',
         'weight',
         'height',
-    ];   //
+    ];   //get the user....
     /**
      * Get the user that owns the Biometric.
      *
